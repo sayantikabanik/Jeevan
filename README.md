@@ -1,4 +1,5 @@
-# Prosthetics Management System
+# Jeevan 
+## (Prosthetics Management System)
 <h1>Introduction</h1>
 <p>The project revolves around with the intention of making it easier for the
 needy to get access to Prosthetics easier. Internet is a pretty vast and the
