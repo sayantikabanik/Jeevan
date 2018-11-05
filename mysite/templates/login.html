@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<style>
+body  {
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BYjxg9jTitpfkf6g/gray-white-shine-background-bright-christmas-design-glamour-glow-holiday_stsch8xvl_thumbnail-full01.png");
+    background-color: #cccccc;
+}
+</style>
+
+	<!-- <img src="{% static "images/coverpic.jpg" %}" alt="cant'load"/> -->
+  {% if form.errors %}
+   <div style="background-color:yellow"; height= 30px>
+    <p style="color: red">Your username and password didn't match. Please try again.</p>
+</div>
+  {% endif %}
+  <div class="jumbotron">
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}<br>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+        {% if field.help_text %}
+          <p><small style="color: grey">{{ field.help_text }}</small></p>
+        {% endif %}
+      </p>
+    {% endfor %}
+    <button type="submit">Log in</button>
+    <p>
+      <p>
+    <a style="color:#000000;" href="{% url 'signup' %}">New to My Site? Sign up</a>
+
+  </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+doubts:
+
+1) in schema diagram , what is (o) and what is pk?
+2) what is UNIQUE() in sql querry table?
+3) what is the connector kinda thing in the er digram?
+4) different names must be given in the schema diagram for the 2 name_id no?( or is it leg_id)?
+5) i didnt understand the relations part in the er diagram...
+6) why damage relation for eye and accidental loss for other body component?
+
+username:Prostethics
+password:patients

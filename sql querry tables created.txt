@@ -1,0 +1,82 @@
+CREATE TABLE hand_prost
+(
+  hand_id VARCHAR(20) NOT NULL,
+  gender CHAR(3) NOT NULL,
+  side_LR VARCHAR(200) NOT NULL,
+  wrist_dis VARCHAR(20) NOT NULL,
+  cost FLOAT NOT NULL,
+  location VARCHAR,
+  size VARCHAR(15) NOT NULL,
+  PRIMARY KEY (hand_id)
+);
+
+CREATE TABLE leg_prost
+(
+  leg_id VARCHAR(20) NOT NULL,
+  weight INT NOT NULL,
+  warrenty INT NOT NULL,
+  heel_height INT NOT NULL,
+  activity_level VARCHAR(11) NOT NULL,
+  location VARCHAR(11),
+  cost FLOAT NOT NULL,
+  PRIMARY KEY (leg_id)
+);
+
+CREATE TABLE eye_prost
+(
+  eye_id VARCHAR(11) NOT NULL,
+  colour VARCHAR(20) NOT NULL,
+  type VARCHAR(11) NOT NULL,
+  location VARCHAR(11),
+  cost FLOAT NOT NULL,
+  PRIMARY KEY (eye_id)
+);
+
+CREATE TABLE teeth_prost
+(
+  teeth_id VARCHAR(11) NOT NULL,
+  type VARCHAR(11) NOT NULL,
+  material VARCHAR(11) NOT NULL,
+  location VARCHAR(11),
+  cost FLOAT NOT NULL,
+  description VARCHAR(30) NOT NULL,
+  PRIMARY KEY (teeth_id)
+);
+
+CREATE TABLE customer
+(
+  name/id VARCHAR(11) NOT NULL,
+  password VARCHAR(11) NOT NULL,
+  PRIMARY KEY (name/id)
+);
+
+CREATE TABLE orders
+(
+  quantity INT NOT NULL,
+  hand_id VARCHAR(20) NOT NULL,
+  eye_id VARCHAR(11) NOT NULL,
+  teeth_id VARCHAR(11) NOT NULL,
+  name/id VARCHAR(11) NOT NULL,
+  leg_id VARCHAR(20) NOT NULL,
+  FOREIGN KEY (hand_id) REFERENCES hand_prost(hand_id),
+  FOREIGN KEY (eye_id) REFERENCES eye_prost(eye_id),
+  FOREIGN KEY (teeth_id) REFERENCES teeth_prost(teeth_id),
+  FOREIGN KEY (name/id) REFERENCES customer(name/id),
+  FOREIGN KEY (leg_id) REFERENCES leg_prost(leg_id),
+  UNIQUE ()
+);
+
+CREATE TABLE reviews
+(
+  points INT NOT NULL,
+  name/id VARCHAR(11) NOT NULL,
+  hand_id VARCHAR(20) NOT NULL,
+  eye_id VARCHAR(11) NOT NULL,
+  teeth_id VARCHAR(11) NOT NULL,
+  FOREIGN KEY (name/id) REFERENCES customer(name/id),
+  FOREIGN KEY (hand_id) REFERENCES hand_prost(hand_id),
+  FOREIGN KEY (eye_id) REFERENCES eye_prost(eye_id),
+  FOREIGN KEY (teeth_id) REFERENCES teeth_prost(teeth_id),
+  UNIQUE (name/id),
+  UNIQUE ()
+);
