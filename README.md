@@ -26,5 +26,5 @@ making it easier to find the following:
 <li>Artificial Hands</li>
 <li>Artificial Eyes</li>
 <li>Artificial Teeth</li>
-</ul>
-This is a portal that gives easy access to all Prosthetics in one place
+</ul>  
+This is a portal that gives easy access to all Prosthetics in one place.
